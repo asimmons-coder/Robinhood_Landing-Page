@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boon GROW | Leadership Coaching for Robinhood</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --boon-blue: #3B5BDB;
+      --boon-dark: #1e3a8a;
+      --gray-900: #111827;
+      --gray-700: #374151;
+      --gray-500: #6B7280;
+      --gray-200: #E5E7EB;
+      --gray-100: #F3F4F6;
+      --gray-50: #F9FAFB;
+      --green: #10B981;
+      --red: #EF4444;
+    }
+
+    body {
+      font-family: 'Barlow', sans-serif;
+      color: var(--gray-700);
+      line-height: 1.6;
+      background: var(--gray-50);
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, var(--boon-blue) 0%, var(--boon-dark) 100%);
+      padding: 80px 24px;
+      text-align: center;
+      color: white;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: 42px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      letter-spacing: -0.5px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      font-weight: 300;
+      opacity: 0.9;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    /* Sections */
+    section {
+      padding: 60px 24px;
+    }
+
+    section:nth-child(even) {
+      background: white;
+    }
+
+    .section-title {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      color: var(--boon-blue);
+      margin-bottom: 12px;
+      text-transform: uppercase;
+    }
+
+    .section-heading {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--gray-900);
+      margin-bottom: 20px;
+    }
+
+    .section-text {
+      font-size: 16px;
+      color: var(--gray-700);
+      max-width: 650px;
+    }
+
+    /* What It Is */
+    .what-list {
+      list-style: none;
+      margin-top: 24px;
+    }
+
+    .what-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 16px;
+      font-size: 15px;
+    }
+
+    .what-list .icon {
+      width: 24px;
+      height: 24px;
+      background: var(--boon-blue);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .what-list .icon svg {
+      width: 14px;
+      height: 14px;
+      color: white;
+    }
+
+    /* How It Works */
+    .steps {
+      margin-top: 32px;
+    }
+
+    .step {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 24px;
+    }
+
+    .step-number {
+      width: 36px;
+      height: 36px;
+      background: var(--boon-blue);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+
+    .step-content h4 {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--gray-900);
+      margin-bottom: 4px;
+    }
+
+    .step-content p {
+      font-size: 14px;
+      color: var(--gray-500);
+    }
+
+    /* Manager Visibility */
+    .visibility-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-top: 24px;
+    }
+
+    @media (max-width: 600px) {
+      .visibility-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .visibility-card {
+      background: var(--gray-50);
+      border-radius: 12px;
+      padding: 24px;
+    }
+
+    .visibility-card.sees {
+      border-left: 4px solid var(--green);
+    }
+
+    .visibility-card.confidential {
+      border-left: 4px solid var(--red);
+    }
+
+    .visibility-card h4 {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .visibility-card.sees h4 {
+      color: var(--green);
+    }
+
+    .visibility-card.confidential h4 {
+      color: var(--red);
+    }
+
+    .visibility-card ul {
+      list-style: none;
+      font-size: 14px;
+    }
+
+    .visibility-card li {
+      margin-bottom: 8px;
+      padding-left: 16px;
+      position: relative;
+    }
+
+    .visibility-card li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--gray-400);
+    }
+
+    .visibility-note {
+      margin-top: 20px;
+      padding: 16px;
+      background: var(--gray-100);
+      border-radius: 8px;
+      font-size: 14px;
+      font-style: italic;
+      color: var(--gray-500);
+    }
+
+    /* Pilot Options */
+    .pilot-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-top: 24px;
+    }
+
+    @media (max-width: 600px) {
+      .pilot-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .pilot-card {
+      background: white;
+      border: 2px solid var(--gray-200);
+      border-radius: 12px;
+      padding: 28px;
+      transition: border-color 0.2s;
+    }
+
+    .pilot-card:hover {
+      border-color: var(--boon-blue);
+    }
+
+    .pilot-card.featured {
+      border-color: var(--boon-blue);
+      position: relative;
+    }
+
+    .pilot-badge {
+      position: absolute;
+      top: -12px;
+      left: 24px;
+      background: var(--boon-blue);
+      color: white;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 12px;
+      letter-spacing: 0.5px;
+    }
+
+    .pilot-card h4 {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--gray-900);
+      margin-bottom: 4px;
+    }
+
+    .pilot-card .participants {
+      font-size: 14px;
+      color: var(--boon-blue);
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+
+    .pilot-card ul {
+      list-style: none;
+      font-size: 14px;
+    }
+
+    .pilot-card li {
+      margin-bottom: 8px;
+      padding-left: 20px;
+      position: relative;
+    }
+
+    .pilot-card li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--green);
+      font-weight: 600;
+    }
+
+    /* Metrics */
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    @media (max-width: 600px) {
+      .metrics-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .metric-card {
+      background: var(--gray-50);
+      border-radius: 10px;
+      padding: 20px;
+    }
+
+    .metric-card h4 {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--gray-900);
+      margin-bottom: 4px;
+    }
+
+    .metric-card p {
+      font-size: 13px;
+      color: var(--gray-500);
+    }
+
+    /* CTA */
+    .cta {
+      background: var(--gray-900);
+      padding: 60px 24px;
+      text-align: center;
+      color: white;
+    }
+
+    .cta h2 {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .cta p {
+      font-size: 16px;
+      font-weight: 300;
+      opacity: 0.8;
+      margin-bottom: 28px;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: var(--boon-blue);
+      color: white;
+      text-decoration: none;
+      padding: 14px 32px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 15px;
+      transition: background 0.2s;
+    }
+
+    .cta-button:hover {
+      background: var(--boon-dark);
+    }
+
+    /* Footer */
+    footer {
+      padding: 32px 24px;
+      text-align: center;
+      font-size: 13px;
+      color: var(--gray-500);
+    }
+
+    footer a {
+      color: var(--boon-blue);
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="container">
+      <div class="hero-badge">PREPARED FOR ROBINHOOD</div>
+      <h1>Boon GROW</h1>
+      <p>Leadership coaching that ties to your competencies, not a generic framework.</p>
+    </div>
+  </header>
+
+  <!-- What It Is -->
+  <section>
+    <div class="container">
+      <div class="section-title">What It Is</div>
+      <h2 class="section-heading">Coaching for high-potential leaders</h2>
+      <p class="section-text">Boon GROW is a nomination-based coaching program where each participant works 1:1 with a current or former executive—matched to their goals, industry, and development areas.</p>
+
+      <ul class="what-list">
+        <li>
+          <div class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+            </svg>
+          </div>
+          <span><strong>Competency-aligned</strong> — Coaching focuses on 3-5 leadership areas you select, not a one-size-fits-all model</span>
+        </li>
+        <li>
+          <div class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+            </svg>
+          </div>
+          <span><strong>Manager-connected</strong> — Managers have visibility into focus areas and progress without seeing confidential content</span>
+        </li>
+        <li>
+          <div class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+            </svg>
+          </div>
+          <span><strong>Measurable impact</strong> — Pre/post assessments and manager feedback give you data to defend the investment</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section>
+    <div class="container">
+      <div class="section-title">How It Works</div>
+      <h2 class="section-heading">From enrollment to impact in 5 steps</h2>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h4>Configure competencies</h4>
+            <p>Select 3-5 leadership focus areas tied to Robinhood's priorities</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h4>Enroll participants</h4>
+            <p>Add employees via the portal; they receive a 5-minute welcome survey</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h4>Coach matching</h4>
+            <p>Boon matches each participant with 2 coach options within 24 hours</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">4</div>
+          <div class="step-content">
+            <h4>Coaching begins</h4>
+            <p>8-12 sessions over 4-6 months, 45 min each, via Zoom</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">5</div>
+          <div class="step-content">
+            <h4>Measure impact</h4>
+            <p>Pre/post competency assessments, manager feedback, and engagement data</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Manager Visibility -->
+  <section>
+    <div class="container">
+      <div class="section-title">Manager Visibility</div>
+      <h2 class="section-heading">Connected, not invasive</h2>
+      <p class="section-text">Managers stay in the loop without compromising the coaching relationship.</p>
+
+      <div class="visibility-grid">
+        <div class="visibility-card sees">
+          <h4>What Managers See</h4>
+          <ul>
+            <li>Enrollment status</li>
+            <li>Sessions completed</li>
+            <li>Focus areas (theme-level)</li>
+            <li>Pre/post survey inputs</li>
+            <li>Option to request alignment call</li>
+          </ul>
+        </div>
+        <div class="visibility-card confidential">
+          <h4>What Stays Confidential</h4>
+          <ul>
+            <li>Session content and notes</li>
+            <li>Private conversations</li>
+            <li>Personal issues discussed</li>
+            <li>Anything that could be used for performance management</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="visibility-note">
+        This is leadership acceleration, not performance correction. Content stays between participant and coach.
+      </div>
+    </div>
+  </section>
+
+  <!-- Pilot Options -->
+  <section>
+    <div class="container">
+      <div class="section-title">Pilot Options</div>
+      <h2 class="section-heading">Start small, prove impact</h2>
+
+      <div class="pilot-grid">
+        <div class="pilot-card">
+          <h4>Starter Pilot</h4>
+          <div class="participants">20-25 participants</div>
+          <ul>
+            <li>4-month duration</li>
+            <li>8 sessions per person</li>
+            <li>Manager portal access</li>
+            <li>Pre/post surveys</li>
+            <li>Competency mapping</li>
+          </ul>
+        </div>
+        <div class="pilot-card featured">
+          <div class="pilot-badge">RECOMMENDED</div>
+          <h4>Full Pilot</h4>
+          <div class="participants">40-50 participants</div>
+          <ul>
+            <li>6-month duration</li>
+            <li>12 sessions per person</li>
+            <li>Everything in Starter</li>
+            <li>Group coaching option</li>
+            <li>Quarterly insights report</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Success Metrics -->
+  <section>
+    <div class="container">
+      <div class="section-title">Success Metrics</div>
+      <h2 class="section-heading">Data you can defend</h2>
+
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <h4>Engagement</h4>
+          <p>Session completion rate, NPS, coach match satisfaction</p>
+        </div>
+        <div class="metric-card">
+          <h4>Competency Growth</h4>
+          <p>Pre/post self-assessment on selected focus areas</p>
+        </div>
+        <div class="metric-card">
+          <h4>Manager-Observed Change</h4>
+          <p>Pre/post manager survey on visible behaviors</p>
+        </div>
+        <div class="metric-card">
+          <h4>Business Proxy</h4>
+          <p>Retention intent, promotion readiness, performance confidence</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="container">
+      <h2>Ready to run the pilot?</h2>
+      <p>Let's design the A/B test together.</p>
+      <a href="https://meetings.hubspot.com/canderson36/boon-scheduling-caitlin-alex-s" class="cta-button">Schedule a Call</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      Questions? <a href="mailto:asimmons@boon-health.com">asimmons@boon-health.com</a>
+    </div>
+  </footer>
+
+</body>
+</html>
