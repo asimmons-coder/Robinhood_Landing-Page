@@ -342,6 +342,64 @@
       color: var(--gray-500);
     }
 
+    /* Coaches */
+    .coaches-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 32px;
+    }
+
+    @media (max-width: 700px) {
+      .coaches-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .coach-card {
+      background: white;
+      border-radius: 12px;
+      padding: 24px;
+      text-align: center;
+    }
+
+    .coach-card img {
+      width: 120px;
+      height: 120px;
+      border-radius: 12px;
+      object-fit: cover;
+      margin-bottom: 16px;
+    }
+
+    .coach-card h4 {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--gray-900);
+      margin-bottom: 4px;
+    }
+
+    .coach-card .coach-title {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--boon-blue);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+
+    .coach-card .coach-company {
+      font-size: 13px;
+      color: var(--gray-500);
+      margin-bottom: 12px;
+    }
+
+    .coach-card .coach-quote {
+      font-size: 13px;
+      color: var(--gray-600);
+      font-style: italic;
+      line-height: 1.5;
+    }
+
     /* Footer */
     footer {
       padding: 32px 24px;
@@ -401,6 +459,39 @@
           <span><strong>Visibility into change:</strong> Pre/post assessments and manager feedback show what's shifting</span>
         </li>
       </ul>
+    </div>
+  </section>
+
+  <!-- Our Coaches -->
+  <section>
+    <div class="container">
+      <div class="section-title">Our Coaches</div>
+      <h2 class="section-heading">Operators coaching operators</h2>
+      <p class="section-text">Boon matches leaders with coaches who have operated at the same altitude. Former executives, functional leaders, and builders who understand the decisions your people are actually making.</p>
+
+      <div class="coaches-grid">
+        <div class="coach-card">
+          <img src="https://storage.googleapis.com/boon-public-assets/amykellylauer.jpg" alt="Amy Kelly Lauer">
+          <h4>Amy Kelly Lauer</h4>
+          <div class="coach-title">Former SVP/GM at Sephora</div>
+          <div class="coach-company">Old Navy, Banana Republic, Gap</div>
+          <p class="coach-quote">"I help operators stop carrying decisions they shouldn't have to make alone."</p>
+        </div>
+        <div class="coach-card">
+          <img src="https://storage.googleapis.com/boon-public-assets/Colin%20Cosgrove.png" alt="Colin Cosgrove">
+          <h4>Colin Cosgrove</h4>
+          <div class="coach-title">Former Head of Compliance at Google</div>
+          <div class="coach-company">11 years at Google</div>
+          <p class="coach-quote">"I coach GTM leaders to scale without losing their human edge."</p>
+        </div>
+        <div class="coach-card">
+          <img src="https://storage.googleapis.com/boon-public-assets/Olga%20Volgin_New.png" alt="Olga Volgin">
+          <h4>Olga Volgin</h4>
+          <div class="coach-title">Principal Eng Manager at Microsoft</div>
+          <div class="coach-company">20 years in Azure UX</div>
+          <p class="coach-quote">"I coach leaders promoted for results who were never taught how to lead people."</p>
+        </div>
+      </div>
     </div>
   </section>
 
