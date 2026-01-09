@@ -400,18 +400,43 @@
       line-height: 1.5;
     }
 
-    /* Footer */
-    footer {
-      padding: 32px 24px;
-      text-align: center;
-      font-size: 13px;
+    /* Vision/Where This Goes */
+    .vision-grid {
+      margin-top: 32px;
+    }
+
+    .vision-item {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 24px;
+    }
+
+    .vision-number {
+      width: 36px;
+      height: 36px;
+      background: var(--gray-200);
+      color: var(--gray-700);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+
+    .vision-content h4 {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--gray-900);
+      margin-bottom: 4px;
+    }
+
+    .vision-content p {
+      font-size: 14px;
       color: var(--gray-500);
     }
 
-    footer a {
-      color: var(--boon-blue);
-      text-decoration: none;
-    }
   </style>
 </head>
 <body>
@@ -440,7 +465,7 @@
               <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
             </svg>
           </div>
-          <span><strong>Competency-aligned:</strong> Coaching focuses on 3-5 leadership areas you select, not a one-size-fits-all model</span>
+          <span><strong>Competency-aligned:</strong> Coaching ties to Robinhood's leadership priorities, with participants choosing focus areas that fit their goals</span>
         </li>
         <li>
           <div class="icon">
@@ -473,8 +498,8 @@
         <div class="coach-card">
           <img src="https://storage.googleapis.com/boon-public-assets/amykellylauer.jpg" alt="Amy Kelly Lauer">
           <h4>Amy Kelly Lauer</h4>
-          <div class="coach-title">Former SVP/GM at Sephora</div>
-          <div class="coach-company">Old Navy, Banana Republic, Gap</div>
+          <div class="coach-title">Former SVP/GM at Sephora, Old Navy, Gap</div>
+          <div class="coach-company">20+ years in retail leadership</div>
           <p class="coach-quote">"I help operators stop carrying decisions they shouldn't have to make alone."</p>
         </div>
         <div class="coach-card">
@@ -482,7 +507,7 @@
           <h4>Colin Cosgrove</h4>
           <div class="coach-title">Former Head of Compliance at Google</div>
           <div class="coach-company">11 years at Google</div>
-          <p class="coach-quote">"I coach GTM leaders to scale without losing their human edge."</p>
+          <p class="coach-quote">"I coach leaders navigating complexity who need a thought partner, not a playbook."</p>
         </div>
         <div class="coach-card">
           <img src="https://storage.googleapis.com/boon-public-assets/Olga%20Volgin_New.png" alt="Olga Volgin">
@@ -505,8 +530,8 @@
         <div class="step">
           <div class="step-number">1</div>
           <div class="step-content">
-            <h4>Configure competencies</h4>
-            <p>Select 3-5 leadership focus areas tied to Robinhood's priorities</p>
+            <h4>Define leadership priorities</h4>
+            <p>Identify Robinhood's core competencies; participants choose focus areas that match their growth edges</p>
           </div>
         </div>
         <div class="step">
@@ -640,12 +665,44 @@
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer>
+  <!-- Where This Goes -->
+  <section>
     <div class="container">
-      Questions? <a href="mailto:asimmons@boon-health.com">asimmons@boon-health.com</a>
+      <div class="section-title">Where This Goes</div>
+      <h2 class="section-heading">A pilot is just the starting point</h2>
+      <p class="section-text">We're not pitching a vendor relationship. We're proposing a foundation for how Robinhood develops leaders at every level.</p>
+
+      <div class="vision-grid">
+        <div class="vision-item">
+          <div class="vision-number">1</div>
+          <div class="vision-content">
+            <h4>Prove the model</h4>
+            <p>Run a focused pilot with high-potentials. Measure what shifts. Learn what Robinhood leaders actually need.</p>
+          </div>
+        </div>
+        <div class="vision-item">
+          <div class="vision-number">2</div>
+          <div class="vision-content">
+            <h4>Expand intentionally</h4>
+            <p>Extend to new managers, senior leaders, or specific functions based on what the data shows.</p>
+          </div>
+        </div>
+        <div class="vision-item">
+          <div class="vision-number">3</div>
+          <div class="vision-content">
+            <h4>Build a system, not a stack</h4>
+            <p>One partner who knows your culture, your competencies, and your people. Not four disconnected vendors.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="visibility-note">
+        The goal isn't to sell you more programs. It's to become the partner you don't have to manage.
+      </div>
     </div>
-  </footer>
+  </section>
+
+  <!-- Footer -->
 
 </body>
 </html>
